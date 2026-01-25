@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Environnements virtuels
+venv/
+env/
+.venv/
+
+# Fichiers de données volumineux - À NE PAS versionner
+*.joblib
+*.pkl
+*.h5
+*.hdf5
+model/
+models/
+data/
+
+# Fichiers CSV/Excel (si volumineux)
+*.csv
+*.xlsx
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.*.local
+
+# IDE et éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Exceptions (fichiers à garder même dans data/)
+!data/sample.csv
+!data/test.csv
