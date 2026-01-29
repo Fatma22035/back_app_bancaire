@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 import joblib
+import uvicorn
 import numpy as np
 import logging
 from typing import Dict, List, Optional, Any, Union
@@ -452,11 +453,13 @@ def get_features_importance():
     return {"feature_importance": feature_importance}
 
 if __name__ == "__main__":
-    import uvicorn
-    logger.info("🚀 Démarrage de l'API sur http://0.0.0.0:8000")
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    
+    logger.info(f"🚀 Démarrage de l'API sur le port {port}")
     uvicorn.run(
         app, 
         host="0.0.0.0", 
-        port=8000,
+        port=port,
         log_level="info"
     )
