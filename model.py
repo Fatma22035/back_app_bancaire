@@ -25,9 +25,22 @@ app = FastAPI(
 # Configuration CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000", "*"],
+    allow_origins=[
+        # Développement local
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        
+        # Votre frontend Vercel (PRODUCTION)
+        "https://front-app-bancaire.vercel.app",
+        
+        # URLs de preview Vercel (si vous en avez)
+        "https://vercel.com/f-elwavis-projects",
+        
+        # Tous les sous-domaines Vercel (pattern générique)
+        "https://*.vercel.app",
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
 
