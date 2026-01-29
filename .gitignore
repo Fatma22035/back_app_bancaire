@@ -10,7 +10,6 @@ env/
 .venv/
 
 # Fichiers de données volumineux - À NE PAS versionner
-*.joblib
 *.pkl
 *.h5
 *.hdf5
