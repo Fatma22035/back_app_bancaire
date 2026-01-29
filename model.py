@@ -23,16 +23,10 @@ app = FastAPI(
 )
 
 # Configuration CORS
+# REMPLACEZ la section CORS par :
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "https://front-app-bancaire.vercel.app",
-        "https://front-app-bancaire-*.vercel.app",  # Pattern pour les previews
-        "https://*.vercel.app",  # Tous les Vercel
-        "https://vercel.app",  # Domaine principal
-    ],
+    allow_origins=["*"],  # LA SOLUTION SIMPLE
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
